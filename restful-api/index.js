@@ -14,11 +14,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true , useUnifiedTopology: true }, (e
   console.log('Mongo is connected')
 })
 
+app.use(express.static(`${__dirname}/dist`))
+
 app.use(bodyParser.json())
 
 app.use(logger)
 
 app.use('/api', router)
+
+app.use('/*', (req, res)=> res.sendFile(`${__dirname}/dist/index.html`))
 
 
 
