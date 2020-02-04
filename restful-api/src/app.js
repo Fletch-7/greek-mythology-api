@@ -17,6 +17,7 @@ class App extends React.Component {
 
   render() {
     return (
+
       <BrowserRouter>
         <main>
           <Navbar/>
@@ -29,6 +30,7 @@ class App extends React.Component {
           </Switch>
         </main>
       </BrowserRouter>
+      
     )
   }
 }
